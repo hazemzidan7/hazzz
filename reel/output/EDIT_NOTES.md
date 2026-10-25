@@ -69,3 +69,50 @@ No NASA logo assets were added.
 - I could not upload to Google Drive. The Drive connector only handles small files and this file is about 89 MB. The files are in `reel/output/`.
 - I could not listen to the soundtrack or the closing shout, or watch the video in real time. I reviewed one frame per second across the full reel plus targeted frames.
 - CapCut is not available here, so the edit was built with FFmpeg.
+
+---
+
+# EDUZAH version: what changed
+
+Files:
+- `NASA_SPACE_APPS_ASSIUT_EDUZAH_REEL_FINAL.mp4`: main deliverable
+- `NASA_SPACE_APPS_ASSIUT_EDUZAH_REEL_ALT_WITH_SHOUT.mp4`: same picture, with the closing "Eduzah" shout kept
+- `NASA_SPACE_APPS_ASSIUT_REEL_FINAL.mp4`: the previous version, left untouched
+- Build: `scripts/make_brand_assets.py`, then `scripts/build_reel_eduzah.py`
+
+## Audio
+**FINAL is soundtrack only.** The addendum requires all clip audio to be inaudible, so the closing shout from the previous version was removed.
+
+Verified: I decoded the FINAL audio and compared it with `soundtrack_original.wav`. The difference is −43 to −62 dB in every 5-second window, which is the level of AAC encoding error. That means no clip audio is present.
+
+Because the shout ending was something you asked for earlier, the ALT file keeps it, mixed over the ducked soundtrack exactly as before.
+
+## Logo
+- **Asset:** your official horizontal logo `IMG_3703.png`. I only trimmed its empty white margin and scaled it proportionally (150 px wide). It is not recoloured or redrawn.
+- **Treatment:** the PNG has an opaque white background and no transparent version of the current identity was found, so I did not cut the background out. The logo sits unchanged on a small white rounded tag (94% opacity, soft shadow).
+- **Placement:** top centre, y = 174–284 px, inside the Reels safe area, same position for the whole reel. It fades in at 0.6 s and goes out with the final fade.
+- **Size:** the tag is about 18% of the frame width, the logo itself 14%. That is larger than the 5–8% guideline, because below this size the Arabic "ايدوزا" line becomes illegible on a phone.
+
+## Brand colours (sampled from the official logo pixels)
+- Plum `#321D3C`
+- Magenta `#D81B5D`, used as the single accent
+- Orange dot
+
+Titles are white for legibility on the footage. Magenta is used only for the accent bars and the "×", because magenta text tested poorly on the bright classroom footage.
+
+## Typography and animation
+- **Font:** Montserrat ExtraBold for titles; SemiBold and Medium for supporting lines.
+- **Line reveals:** each line fades in over 0.35–0.4 s while rising 20–40 px with an ease-out curve (no overshoot), and fades out over 0.25 s. Multi-line titles are staggered 0.15–0.2 s apart.
+- **Accent bars:** the magenta bars grow from the centre over 0.45 s.
+- **Legibility:** soft dark gradients sit behind text only while it is on screen, and they switch on at shot cuts.
+- **Kinetic words:** "LEARNING." / "BUILDING." / "COLLABORATING." each land on the cut to the shot that shows them (14.0 / 21.5 / 26.0 s, on the beat).
+- **No text during the peak** (28–40 s), so the footage carries it.
+
+## Wording
+The wording describes participation only: "EDUZAH AT …", "EDUZAH × …". There is no claim of organising, sponsorship, partnership or NASA endorsement, and no NASA logo is used.
+
+## Export (both files verified)
+- 45.000 s, 1350 frames, 1080×1920, H.264 High, 30 fps, about 16.5 Mbps
+- AAC 48 kHz stereo
+- Full decode clean
+- No black or frozen frames

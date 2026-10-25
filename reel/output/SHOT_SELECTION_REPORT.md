@@ -54,3 +54,39 @@ The workshop title slide in `IMG_4715` names the presenter as **م. حازم ز�
 | 36–38 | 0706 @ 6.4 | You with the students again |
 | 38–39.8 | 0723 @ 0.0 | You with arms raised, framed pull-back |
 | 39.8–45 | 3438 @ 6.8 | Whole group framed, push-in to full frame through the countdown, landing on the "Eduzah" shout at 43.0 s. Closing title on top |
+
+---
+
+# EDUZAH version (`NASA_SPACE_APPS_ASSIUT_EDUZAH_REEL_FINAL.mp4`)
+
+## New footage (added 25 Oct)
+| Clip | Length | Content | Used |
+|---|---|---|---|
+| IMG_4630 | 18.4 s | Wide hall: Eduzah trainer presenting, astronaut cut-out, pan to the eduzah roll-up and full hall | 6–8 s (replaces 0394, which showed a speaker unrelated to Eduzah) |
+| IMG_4650 | 49.4 s | Eduzah trainer (black shirt, glasses) presenting "AI & MOBILE APPS"; good medium shots at 24–46 s | 14–15.5 s "LEARNING." (replaces 0705, where you were too small in frame) |
+| IMG_4667 | 3.6 s | Same trainer typing a live demo at the laptop | 21.5–23.5 s "BUILDING." (replaces 0701, unclear standing students) |
+| IMG_4669 | 6.9 s | Same trainer explaining the demo | Not used (4667 is the stronger "building" image) |
+| IMG_3702 / IMG_3703 | PNG | Official eduzah logo, stacked and horizontal, on white | IMG_3703 used as the watermark |
+
+I did not use the "Logo" and "New Logo" folders in your Drive: those files belong to another brand (Mohamed Salem). The transparent Eduzah PNGs in your designer's 2025 "Logo / Dark BG" folder are the older identity, with the tagline "للتدريب وتصميم المناهج التعليمية". So I used the current logo you uploaded.
+
+## Timeline (45.0 s)
+| Time | Source | Text |
+|---|---|---|
+| 0–2 | 0710 @ 37.3 (you, hook) | EDUZAH AT / NASA SPACE APPS / ASSIUT |
+| 2–4 | 4557 @ 3.5 (Space Apps banner + astronaut) | …+ "A Journey of Innovation, Technology & Collaboration" |
+| 4–6 | 0263 @ 5.5 (arrivals) | WHERE IDEAS / MEET TECHNOLOGY |
+| 6–8 | **4630 @ 12.4** (hall + eduzah roll-up) | (same phrase) |
+| 8–10 | 4715 @ 0.3 (your workshop slide) | FROM IDEA TO PRODUCT / Workshop by Eng. Hazem Zidan |
+| 10–12 | 0715 @ 4.0 | zoom-through |
+| 12–14 | 0710 @ 4.0 (you) | — |
+| 14–15.5 | **4650 @ 30.0** (Eduzah trainer) | LEARNING. |
+| 15.5–18 | 0706 @ 2.0 (you with students) | — |
+| 18–20 | 0710 @ 18.0 | — |
+| 20–21.5 | 0722 @ 0.0 (you by the eduzah banner) | — |
+| 21.5–23.5 | **4667 @ 0.3** (live demo) | BUILDING. |
+| 23.5–26 | 0710 @ 60.5 | — |
+| 26–28 | 4162 @ 0.9 (Space Apps Camp activity) | COLLABORATING. |
+| 28–40 | 0706, 0722, 0710, 0263, 0706 (peak) | no text |
+| 38–39.8 | 0723 (arms raised) | — |
+| 39.8–45 | 3438 (whole group, push-in) | EDUZAH × NASA / SPACE APPS ASSIUT / Innovation. Collaboration. Impact. |
