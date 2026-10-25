@@ -25,12 +25,17 @@ Limitation: I checked the track by measurement (loudness per second, section arc
 To use a licensed track instead, put the file in the Drive folder. Swapping it in is one command, but the cuts are timed to this track's 120 BPM sections, so a different song may need small timing changes.
 
 ## Audio
-Only the soundtrack is in the file. The original clip audio is never mapped (`-map 1:a` only).
+Only the soundtrack plays from 0 to 39.8 s. The original clip audio is not used anywhere in that part.
+
+The one exception, at the user's request, is the closing group clip (`IMG_3438`, 39.8–45 s). Its own audio (the countdown and the "Eduzah" shout) plays over the soundtrack, which is ducked to 35%. The clip audio is high-passed at 90 Hz, faded in and out, and the whole mix runs through a limiter (peak −1.2 dBFS).
+
+I picked the shout from the loudness pattern, not by ear: three short bursts (7.3 / 8.2 / 9.0 s) and then one sustained shout at 10.0–11.2 s. There is also an earlier sustained shout at 3.1–4.6 s.
 
 ## Transitions
 - Mostly hard cuts, each on a beat (0.5 s grid)
 - **Zoom-through cut** at 12 s (back-of-room wide → you), landing on the drop
 - **Digital zoom**: slow push-ins and pull-outs on your shots, kept within 1.0–1.12× (1.45× only during the 0.3 s zoom-through)
+- **Closing push-in**: the 4K group shot starts framed over a blurred fill and pushes in to full frame (up to about 3.4×, still below 4K native, so nothing is upscaled), timed to land on the shout
 - **Pull-back reveal**: the closing landscape shot, framed over a blurred, darkened fill so it is never upscaled
 - Not used: phone mockup, orbit, paper cut, chart, green screen. They don't suit a documentary recap.
 
@@ -46,7 +51,7 @@ None applied. I chose steady segments instead, which avoids the crop that stabil
 ## Typography
 Montserrat Bold and Medium, white with a soft shadow, centred inside the 9:16 safe area (y 1150–1400 of 1920). Lower thirds sit on a subtle 32% black band for legibility.
 
-Text used (all of it is on the slide in `IMG_4715` or comes from the brief):
+Text used (all of it is on the slide in `IMG_4715` or comes from the brief). The closing title sits at the top of the frame so it doesn't cover the students' faces:
 - "NASA SPACE APPS / ASSIUT"
 - "FROM IDEA TO PRODUCT / Workshop by Eng. Hazem Zidan"
 - Closing: "NASA SPACE APPS / ASSIUT / From Idea to Product · Eng. Hazem Zidan"

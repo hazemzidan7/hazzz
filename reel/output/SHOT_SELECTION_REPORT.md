@@ -2,7 +2,7 @@
 
 ## Source inventory (Google Drive folder, all accessible)
 
-17 video files and 10 photos. `IMG_0263.mov` was in the folder twice; the two copies are byte-identical, so one was set aside.
+18 video files and 10 photos. `IMG_3438` (the group shout) was added later. `IMG_0263.mov` was in the folder twice; the two copies are byte-identical, so one was set aside.
 All iPhone `.mov` clips except `IMG_4162`, `IMG_4557` and `IMG_4715` are 10-bit HLG HDR (BT.2020).
 
 | Clip | Date | Length | Content | You on screen? | Used |
@@ -23,6 +23,7 @@ All iPhone `.mov` clips except `IMG_4162`, `IMG_4557` and `IMG_4715` are 10-bit 
 | IMG_0262 | 14 Oct | 23.1 s | Arrivals (similar to 0263) | — | Not used (redundant) |
 | IMG_0387 | 15 Oct | 5.0 s | Another speaker | — | Not used (not your story) |
 | IMG_0694 | 21 Oct | 38.0 s | Another speaker in a black shirt | No | Not used |
+| IMG_3438 | — | 12.7 s | 4K landscape group photo of every student in front of the eduzah + Space Apps banners. Countdown (7.3 / 8.2 / 9.0 s), then the "Eduzah" shout (10.0–11.2 s) | You are in the group | Closing, 39.8–45 s |
 | F4AD…mp4 | 14 Oct | 3.0 s | Low-res 720p activity clip | — | Not used (quality) |
 | Photos (10) | — | — | Audience, laptops, eduzah banner; 9899/9900/9901 near-duplicates | — | Not used (video was stronger) |
 
@@ -51,5 +52,5 @@ The workshop title slide in `IMG_4715` names the presenter as **م. حازم ز�
 | 32–34 | 0710 @ 45.4 | Energetic gesture, pull-in |
 | 34–36 | 0263 @ 26.0 | Full hall |
 | 36–38 | 0706 @ 6.4 | You with the students again |
-| 38–40 | 0710 @ 66.0 | Mic moment |
-| 40–45 | 0723 @ 0.0 | Arms raised → "Thank you" slide. Pull-back reveal + closing title, fade out |
+| 38–39.8 | 0723 @ 0.0 | You with arms raised, framed pull-back |
+| 39.8–45 | 3438 @ 6.8 | Whole group framed, push-in to full frame through the countdown, landing on the "Eduzah" shout at 43.0 s. Closing title on top |

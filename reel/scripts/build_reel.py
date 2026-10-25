@@ -14,7 +14,7 @@ if not os.path.exists(FONT_B):
     FONT_B = "/usr/share/fonts/truetype/montserrat/Montserrat-Bold.ttf"
     FONT_M = "/usr/share/fonts/truetype/montserrat/Montserrat-Medium.ttf"
 
-HDR = {"IMG_0262", "IMG_0263", "IMG_0387", "IMG_0394", "IMG_0694", "IMG_0701", "IMG_0705",
+HDR = {"IMG_3438", "IMG_0262", "IMG_0263", "IMG_0387", "IMG_0394", "IMG_0694", "IMG_0701", "IMG_0705",
        "IMG_0706", "IMG_0710", "IMG_0714", "IMG_0715", "IMG_0722", "IMG_0723"}
 TONEMAP = ("zscale=t=linear:npl=203:tin=arib-std-b67:pin=bt2020:min=bt2020nc,format=gbrpf32le,"
            "zscale=p=bt709,tonemap=mobius:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
@@ -50,9 +50,11 @@ SHOTS = [
     dict(src="IMG_0710", ss=45.4, dur=2.0, z="1.12-0.08*t/2", cx=0.5, cy=0.42),
     dict(src="IMG_0263", ss=26.0, dur=2.0, z="1.0"),
     dict(src="IMG_0706", ss=6.4, dur=2.0, z="1.10-0.06*t/2", cx=0.6, cy=0.5),
-    dict(src="IMG_0710", ss=66.0, dur=2.0, z="1.06", cx=0.55, cy=0.42),
-    # closing: landscape frame pulls back over a blurred fill, title underneath
-    dict(src="IMG_0723", ss=0.0, dur=5.0, framed=True),
+    # arms raised, landscape frame pulls back over a blurred fill
+    dict(src="IMG_0723", ss=0.0, dur=1.8, framed=True),
+    # closing: whole group framed, push in to full-bleed through the countdown,
+    # landing on the "Eduzah" shout (source 10.0-11.2 s, reel 43.0-44.2 s)
+    dict(src="IMG_3438", ss=6.8, dur=5.2, push=True, cx=0.47, cy=0.52),
 ]
 
 def path(name):
@@ -85,6 +87,17 @@ def render_shot(i, s, bright):
     if os.path.exists(out):
         return out
     src = path(s["src"])
+    if s.get("push"):
+        d = s["dur"]; cx = s["cx"]; cy = s["cy"]
+        u = "min(max((t-0.3)/2.8,0),1)"
+        wexp = f"{W}*pow({H*16/9/W:.4f},{u}*{u}*(3-2*{u}))*(1+0.08*min(max((t-3.1)/2.1,0),1))"
+        fc = (f"[0:v]{TONEMAP},fps={FPS},{GRADE.format(b=bright)},split[a][b];"
+              f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=60,eq=brightness=-0.28:saturation=0.6[bg];"
+              f"[b]scale=w='trunc(({wexp})/2)*2':h=-2:eval=frame:flags=lanczos[fg];"
+              f"[bg][fg]overlay=x='{W/2}-{cx}*w':y='{H/2}-{cy}*h':eval=frame,setsar=1,format=yuv420p[v]")
+        run(["ffmpeg", "-v", "error", "-y", "-ss", str(s["ss"]), "-t", str(d), "-i", src,
+             "-filter_complex", fc, "-map", "[v]", "-an", "-frames:v", str(round(d * FPS)), "-c:v", "libx264", "-crf", "10", "-preset", "fast", out])
+        return out
     if s.get("framed"):
         pre = TONEMAP + "," if s["src"] in HDR else ""
         d = s["dur"]
@@ -110,7 +123,7 @@ def text(t, font, size, y, start, end, fade=0.3, color="white"):
             f":alpha='{a}':shadowcolor=black@0.55:shadowx=0:shadowy=3")
 
 if __name__ == "__main__":
-    lumas = [None if s.get("framed") else measure_luma(s) for s in SHOTS]
+    lumas = [None if s.get("framed") or s.get("push") else measure_luma(s) for s in SHOTS]
     target = statistics.median([l for l in lumas if l])
     parts = []
     for i, (s, l) in enumerate(zip(SHOTS, lumas)):
@@ -124,17 +137,26 @@ if __name__ == "__main__":
     band = lambda a, b: (f"drawbox=x=0:y=1240:w=iw:h=230:color=black@0.32:t=fill:enable='between(t,{a},{b})'")
     titles = ",".join([
         band(2.0, 4.0), band(8.0, 10.0),
+        f"drawbox=x=0:y=270:w=iw:h=255:color=black@0.38:t=fill:enable='between(t,39.8,45)'",
         text("NASA SPACE APPS", FONT_B, 76, 1290, 2.15, 3.95),
         text("A S S I U T", FONT_M, 40, 1385, 2.3, 3.95),
         text("FROM IDEA TO PRODUCT", FONT_B, 60, 1300, 8.15, 9.95),
         text("Workshop by Eng. Hazem Zidan", FONT_M, 40, 1385, 8.3, 9.95),
-        text("NASA SPACE APPS", FONT_B, 84, 1150, 40.9, 45.2, fade=0.5),
-        text("A S S I U T", FONT_M, 44, 1255, 41.2, 45.2, fade=0.5),
-        text("From Idea to Product  ·  Eng. Hazem Zidan", FONT_M, 38, 1350, 41.6, 45.2, fade=0.5),
+        text("NASA SPACE APPS", FONT_B, 84, 300, 40.3, 45.2, fade=0.5),
+        text("A S S I U T", FONT_M, 44, 405, 40.6, 45.2, fade=0.5),
+        text("From Idea to Product  ·  Eng. Hazem Zidan", FONT_M, 38, 470, 41.0, 45.2, fade=0.5),
     ])
-    vf = f"{titles},fade=t=out:st={total-0.5}:d=0.5,format=yuv420p"
+    vf = f"{titles},fade=t=out:st={total-0.3}:d=0.3,format=yuv420p"
+    # audio: soundtrack only, except the closing shout, which plays over a ducked soundtrack
+    cs = total - SHOTS[-1]["dur"]; cl = SHOTS[-1]
+    ms = f"{cs:.3f}"
+    af = (f"[1:a]volume='if(lt(t,{ms}),1,if(lt(t,{cs+0.5:.3f}),1-0.65*(t-{ms})/0.5,0.35))':eval=frame[m];"
+          f"[2:a]aresample=48000,aformat=channel_layouts=stereo,highpass=f=90,volume=1.6,"
+          f"afade=t=in:d=0.15,afade=t=out:st={cl['dur']-0.5}:d=0.5,adelay={int(cs*1000)}:all=1[s];"
+          f"[m][s]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.89:level=0[a]")
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-i", MUSIC,
-         "-map", "0:v", "-map", "1:a", "-vf", vf, "-t", str(total),
+         "-ss", str(cl["ss"]), "-t", str(cl["dur"]), "-i", path(cl["src"]),
+         "-filter_complex", f"[0:v]{vf}[v];{af}", "-map", "[v]", "-map", "[a]", "-t", str(total),
          "-c:v", "libx264", "-profile:v", "high", "-preset", "slow", "-b:v", "16M", "-maxrate", "20M", "-bufsize", "32M",
          "-r", str(FPS), "-pix_fmt", "yuv420p",
          "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-color_range", "tv",
