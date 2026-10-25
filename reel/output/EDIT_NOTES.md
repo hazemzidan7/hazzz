@@ -116,3 +116,55 @@ The wording describes participation only: "EDUZAH AT …", "EDUZAH × …". Ther
 - AAC 48 kHz stereo
 - Full decode clean
 - No black or frozen frames
+
+---
+
+# Final branded revision (`NASA_SPACE_APPS_ASSIUT_EDUZAH_BRANDED_FINAL.mp4`)
+
+Built with `scripts/make_brand_assets_v2.py` and then `scripts/build_reel_branded.py`. The footage, timeline, grade and music are unchanged from the EDUZAH version. Earlier exports are kept.
+
+## Logo
+- **Source file:** the official transparent artwork from the designer's brand folder, `Logo / Dark BG / PNG / Asset 23@3x.png` (copied to `assets/eduzah_logo_official_darkbg_Asset23.png`).
+  - It already has the white "eduzah" and white "ايدوزا" wordmarks, the pink é and the orange dot, on a transparent background.
+  - That matches the reference photo exactly, so I did not need to recolour it or remove a background.
+- **Tagline removed:** the file has a third row with the tagline "للتدريب وتصميم المناهج التعليمية". The build script finds the three rows from the alpha channel and crops off the last one. Nothing else is changed, and it is scaled proportionally to 250×137 px.
+- **Colours in the asset:** sampled as pink `#D91C5C` and orange `#F9A533`. These are the official `#D91B5B` / `#FDA633` within anti-aliasing tolerance.
+- **The white-background logo is no longer used,** and there is no white tag behind it.
+- **Placement:** bottom centre, bottom edge at y = 1620. That keeps it above Instagram's caption/button band (the bottom ~300 px) and well clear of all titles, which sit at y ≤ 690.
+- **Timing:** on screen for the whole reel. It has a 0.5 s fade at the start and no fade at the end; verified bright on the final frame.
+- **Contrast:** a permanent brand gradient sits behind the lower 620 px, fading from transparent through dark purple `#321D3D` to pink `#D91B5B` at the very bottom (max 62% opacity), like the reference photo.
+
+## Colour palette (exact hex, as given)
+| Colour | Hex | Used for |
+|---|---|---|
+| Pink | `#D91B5B` | "EDUZAH AT" label, "IN ACTION", "×", the rule under each kinetic word, bottom gradient edge |
+| Orange | `#FDA633` | Secondary: the rule under the opening and closing titles, the "WORKSHOP" kicker, the 01/02/03 numbers |
+| Dark purple | `#321D3D` | Top title gradient (max 72%), bottom gradient |
+| Purple | `#672D86` | Not used, to keep one accent per scene |
+| White | — | All primary text |
+
+## Typography and layout
+- **Font:** Montserrat ExtraBold for titles; SemiBold for labels and numbers; Medium for the name line.
+- **Placement:** all titles sit in the upper-middle zone (y 330–690). There the footage is mostly ceiling or projector screen, so faces are never covered. A dark-purple top gradient is on only while text is showing, and it switches on at shot cuts.
+- **Copy:**
+  - 0–4 s: label "EDUZAH AT" over the dominant "NASA SPACE APPS / ASSIUT"
+  - 4–8 s: "INNOVATION / IN ACTION"
+  - 8–10 s: "WORKSHOP / FROM IDEA TO PRODUCT / Eng. Hazem Zidan" (the real session title)
+  - 14 / 21.5 / 26 s: "01 LEARNING." / "02 BUILDING." / "03 COLLABORATING.", each on the shot showing it
+  - 40.25–45 s: "EDUZAH / × / NASA SPACE APPS ASSIUT", held through the last frame
+  - No text 28–40 s
+- **Removed:** the earlier generic lines "A Journey of …", "WHERE IDEAS MEET TECHNOLOGY" and "Innovation. Collaboration. Impact."
+
+## Animation
+- **Lines:** each fades in over 0.35–0.45 s while rising 14–28 px with an ease-out cubic (no overshoot), and fades out over 0.25 s. Lines are staggered 0.15–0.2 s.
+- **Rules:** the accent rules grow from the centre over 0.45 s.
+- **Not used:** no bounce, spin, flash, glitch or typewriter effects.
+- **Timing:** every title starts within 0.25 s of a cut on the 120 BPM beat grid.
+
+## Audio
+Soundtrack only. Verified: the decoded audio differs from `soundtrack_original.wav` by at most about −43 dB in any 5-second window, which is AAC encoding error, so no clip audio is present.
+
+## Export (verified)
+- 45.000 s, 1350 frames, 1080×1920, H.264 High, 30 fps, BT.709, about 16.5 Mbps
+- AAC 320 kb/s, 48 kHz stereo
+- Full decode clean; no black or frozen frames
