@@ -36,7 +36,7 @@ I picked the shout from the loudness pattern, not by ear: three short bursts (7.
 - **Zoom-through cut** at 12 s (back-of-room wide → you), landing on the drop
 - **Digital zoom**: slow push-ins and pull-outs on your shots, kept within 1.0–1.12× (1.45× only during the 0.3 s zoom-through)
 - **Closing push-in**: the 4K group shot starts framed over a blurred fill and pushes in to full frame (up to about 3.4×, still below 4K native, so nothing is upscaled), timed to land on the shout
-- **Pull-back reveal**: the closing landscape shot, framed over a blurred, darkened fill so it is never upscaled
+- **Pull-back reveal**: the arms-raised landscape shot (0723), framed over a blurred, darkened fill so it is never upscaled
 - Not used: phone mockup, orbit, paper cut, chart, green screen. They don't suit a documentary recap.
 
 ## Colour
@@ -67,5 +67,5 @@ No NASA logo assets were added.
 
 ## Limitations
 - I could not upload to Google Drive. The Drive connector only handles small files and this file is about 89 MB. The files are in `reel/output/`.
-- I could not listen to the soundtrack or watch the video in real time. I reviewed one frame per second across the full reel plus targeted frames.
+- I could not listen to the soundtrack or the closing shout, or watch the video in real time. I reviewed one frame per second across the full reel plus targeted frames.
 - CapCut is not available here, so the edit was built with FFmpeg.

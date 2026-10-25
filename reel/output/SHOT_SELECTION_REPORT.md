@@ -7,10 +7,10 @@ All iPhone `.mov` clips except `IMG_4162`, `IMG_4557` and `IMG_4715` are 10-bit 
 
 | Clip | Date | Length | Content | You on screen? | Used |
 |---|---|---|---|---|---|
-| IMG_0710 | 21 Oct | 75.5 s | You presenting, wide/medium, Space Apps banner + astronaut visible | **Yes, clearly** | 6 shots (backbone) |
+| IMG_0710 | 21 Oct | 75.5 s | You presenting, wide/medium, Space Apps banner + astronaut visible | **Yes, clearly** | 5 shots (backbone) |
 | IMG_4715 | — | 8.5 s | You seated at the desk, slide: "ورشة عملية – NASA Space Apps Assiut / من الفكرة إلى المنتج / م. حازم زيدان" | **Yes** | Title shot, 8–10 s |
 | IMG_0706 | 21 Oct | 8.6 s | You interacting with students up close | **Yes** | 3 shots |
-| IMG_0723 | 21 Oct | 7.1 s | Landscape. Arms raised, then "Thank you" slide | **Yes** | Closing, 40–45 s |
+| IMG_0723 | 21 Oct | 7.1 s | Landscape. Arms raised, then "Thank you" slide | **Yes** | 38–39.8 s, before the group closing |
 | IMG_0722 | 21 Oct | 5.4 s | You by the eduzah banner, then students raising hands | Yes, first 1.5 s | 2 shots |
 | IMG_0705 | 21 Oct | 3.2 s | You at the front, wide | Yes, small | 1 shot |
 | IMG_0715 | 21 Oct | 19.1 s | Back-of-room wide of your session | Yes, distant | Zoom-through into 0710 |
